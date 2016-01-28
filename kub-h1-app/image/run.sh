@@ -1,0 +1,1 @@
+/usr/local/bin/celery -A celery_conf worker -f /data/celery.log &

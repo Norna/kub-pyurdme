@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: parameter-generator
+  labels:
+    name: parameter-generator
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: parameter-generator
+    spec:
+      containers:
+      - name: parameter-to-rabbitmq
+        image: raingsei/kub-h1-app:alpha-0.6
+        command: ["/usr/bin/python","run_tasks.py","10000","OneSet"]
+        env:
+        - name: PROCESSINGSCRIPT
+          value: parameter-to-broker

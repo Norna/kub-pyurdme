@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    component: flower
+  name: flower-service
+spec:
+  ports:
+  - port: 5555
+  selector:
+    app: taskQueue
+    component: flower
+  externalIPs: ["10.0.10.237","130.238.29.59"]

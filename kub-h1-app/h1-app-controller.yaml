@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: h1-app-controller
+  labels:
+    name: h1-app-controller
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: h1-app-controller
+    spec:
+      containers:
+      - name: h1-app
+        image: raingsei/kub-h1-app:alpha-0.6
+        command: ["/usr/local/bin/celery","-A","celery_conf","worker","-f","/data/celery.log"]
+        env:
+        - name: PROCESSINGSCRIPT
+          value: broker-to-h1-app
