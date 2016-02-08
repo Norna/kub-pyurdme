@@ -5,9 +5,10 @@
 #
 # Authors:
 # Raingsei V, Haisocheat <raingsei.hai@gmail.com>
+# Based on script at fenics-project <fenics@fenicsproject.org>
 
 FROM phusion/baseimage:0.9.12
-MAINTAINER fenics-project <fenics@fenicsproject.org>
+MAINTAINER raingsei.hai@gmail.com
 
 ENV HOME /root
 
